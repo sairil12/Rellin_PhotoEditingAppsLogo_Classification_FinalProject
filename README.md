@@ -1,214 +1,153 @@
-🎨 LogoScan – Photo Editing Logo Classification App
+🎨 LogoScan – Photo Editing Logo Classification System
 
-An intelligent image classification mobile application powered by Machine Learning and Computer Vision that identifies photo editing application logos from camera capture or gallery images. LogoScan is designed for educational, research, and mobile AI application development.
+An intelligent image classification system powered by Deep Learning and Convolutional Neural Networks (CNNs) that accurately identifies photo editing application logos from images. LogoScan is designed for educational, research, and real‑world mobile AI applications.
 
 📋 Overview
 
-LogoScan is a mobile-based image classification system that uses deep learning models to recognize and classify popular photo editing logos (e.g., Photoshop, Lightroom, Canva, PicsArt, etc.).
-This project demonstrates a complete end-to-end AI workflow, integrated into a Flutter mobile application.
+LogoScan is a machine learning‑powered mobile application that leverages computer vision and TensorFlow Lite to classify popular photo editing logos from camera captures or gallery uploads. This project demonstrates a complete end‑to‑end ML pipeline integrated into a Flutter cross‑platform application, from data preprocessing and model training to mobile deployment and real‑time inference.
 
 Project Scope
 
 Type: Supervised Learning – Image Classification
 
-Algorithm: CNN (Convolutional Neural Network)
+Algorithm: Convolutional Neural Networks (CNN)
 
-Platform: Mobile (Flutter)
+Platform: Flutter (Android, iOS, Web, Desktop)
 
-Dataset: Photo Editing App Logos
+Dataset: Photo Editing App Logo Images
 
-Problem: Multi-class classification
+Problem: Multi‑class classification
 
-Deployment: Mobile-ready (Camera & Gallery Inference)
+Accuracy Target: 90%+
+
+Deployment: Mobile‑optimized with TensorFlow Lite
 
 🎯 Project Objectives
 
-📌 Classify photo editing logos from real-world images
+📌 Accurately classify popular photo editing application logos
 
-📌 Integrate ML inference into a Flutter mobile app
+📌 Implement a complete ML workflow in a mobile context
 
-📌 Support both camera capture and gallery upload
+📌 Apply deep learning to real‑world logo recognition
 
-📌 Display classification confidence scores
+📌 Integrate real‑time camera and gallery‑based inference
 
-📌 Analyze model performance visually
+📌 Visualize confidence scores and analytics
 
-📌 Demonstrate practical AI & mobile development skills
+📌 Demonstrate practical ML + Flutter development skills
 
 🛠️ Technology Stack
 Component	Technology
 Mobile Framework	Flutter (Dart)
-Machine Learning	TensorFlow / TensorFlow Lite
+Deep Learning	TensorFlow / TensorFlow Lite
 Model Type	CNN
-Image Input	Camera, Image Picker
-Image Processing	OpenCV / PIL
-Backend (Optional)	Firebase / Local Inference
-Visualization	Charts, Confidence Bars
+Image Input	Camera, Gallery
+Backend	Firebase (Firestore)
+Visualization	FL Chart
+Local Storage	SharedPreferences
 IDE	VS Code / Android Studio
 📂 Project Structure
-PhotoEditingLogo_Classification_App/
+photo_editing_logo_classification/
 │
-├── android/                     # Android native files
-├── ios/                         # iOS native files
-├── web/                         # Web support (optional)
-├── windows/                     # Windows desktop (optional)
-├── macos/                       # macOS desktop (optional)
-├── linux/                       # Linux desktop (optional)
+├── android/
+├── ios/
+├── web/
+├── windows/
+├── macos/
+├── linux/
 │
 ├── assets/
 │   ├── models/
-│   │   ├── logo_model.tflite    # Trained TensorFlow Lite model
-│   │   └── labels.txt           # Logo class labels
+│   │   ├── logo_model.tflite      # Trained & quantized TFLite model
+│   │   └── labels.txt             # Logo class labels
 │   │
 │   └── images/
-│       ├── adobe.jpg            # Adobe Photoshop logo
-│       ├── anime.jpg            # Anime-style sample image
-│       ├── canva.jpg            # Canva logo
-│       ├── fotor.jpg            # Fotor logo
-│       ├── lr.jpg               # Adobe Lightroom logo
-│       ├── meow.jpg             # Placeholder / test image
-│       ├── pics.jpg             # PicsArt logo
-│       ├── pix.jpg              # Pixlr logo
-│       ├── polar.jpg            # Polarr logo
-│       ├── remini.jpg           # Remini logo
-│       ├── snapseed.jpg         # Snapseed logo
-│       ├── totoro.jpg           # Sample image
-│       ├── view.jpg             # Sample image
-│       └── vsco.jpg             # VSCO logo
+│       ├── adobe.jpg              # Adobe Photoshop logo
+│       ├── canva.jpg              # Canva logo
+│       ├── fotor.jpg              # Fotor logo
+│       ├── lr.jpg                 # Adobe Lightroom logo
+│       ├── pics.jpg               # PicsArt logo
+│       ├── pix.jpg                # Pixlr logo
+│       ├── polar.jpg              # Polarr logo
+│       ├── remini.jpg             # Remini logo
+│       ├── snapseed.jpg           # Snapseed logo
+│       ├── vsco.jpg               # VSCO logo
+│       ├── anime.jpg              # Sample test image
+│       ├── meow.jpg               # Placeholder image
+│       ├── totoro.jpg             # Sample test image
+│       └── view.jpg               # Sample test image
 │
 ├── lib/
-│   ├── main.dart                # App entry point
-│
+│   ├── main.dart                  # App entry point
 │   ├── screens/
-│   │   ├── home_screen.dart     # Home / dashboard
-│   │   ├── camera_screen.dart   # Camera capture
-│   │   ├── gallery_screen.dart  # Gallery picker
-│   │   ├── result_screen.dart   # Classification result
-│   │   └── analytics_screen.dart# Charts & insights
+│   │   ├── home_screen.dart
+│   │   ├── classification_screen.dart
+│   │   ├── analytics_screen.dart
+│   │   └── get_started_screen.dart
 │   │
 │   ├── services/
-│   │   ├── classifier.dart      # TFLite inference logic
-│   │   ├── image_service.dart   # Camera & gallery handling
-│   │   └── model_service.dart   # Model loading & initialization
+│   │   ├── classifier.dart        # TFLite inference logic
+│   │   ├── model_diagnostic.dart  # Debug & diagnostics
+│   │   └── preprocessing_config.dart
 │   │
-│   ├── widgets/
-│   │   ├── confidence_bar.dart  # Confidence visualization
-│   │   ├── result_card.dart     # Prediction display card
-│   │   ├── app_drawer.dart      # Burger menu / navigation drawer
-│   │   └── custom_button.dart   # Reusable buttons
-│   │
-│   └── utils/
-│       ├── constants.dart       # App constants
-│       └── helpers.dart         # Utility functions
+│   └── widgets/                   # UI components
 │
-├── ml/
-│   ├── training/
-│   │   ├── 01_data_preparation.ipynb
-│   │   ├── 02_model_training.ipynb
-│   │   └── 03_evaluation.ipynb
-│   │
-│   └── exports/
-│       ├── logo_model.h5        # Trained Keras model
-│       └── logo_model.tflite    # Converted TensorFlow Lite model
+├── test/
+│   └── widget_test.dart
 │
-├── results/
-│   ├── confusion_matrix.png
-│   ├── accuracy_curve.png
-│   ├── loss_curve.png
-│   └── sample_predictions.png
-│
-├── test/                        # Unit & widget tests
-│
-├── pubspec.yaml                 # Flutter dependencies & assets
-├── analysis_options.yaml        # Lint rules
-├── README.md                    # Project documentation
-└── LICENSE
-
+├── pubspec.yaml
+├── analysis_options.yaml
+├── README.md
+└── .gitignore
 📊 Dataset Information
-Logo Classes
-Logo	Samples
-Photoshop	150
-Lightroom	150
+Logo Class	Samples
+Adobe Photoshop	150
+Adobe Lightroom	150
 Canva	150
 PicsArt	150
 Snapseed	150
 VSCO	150
-Others	150
-Total	1,050 images
-Dataset Properties
+Fotor	150
+Pixlr / Other	150
+Total	~1,200 images
 
-Image Size: 224 × 224
+Image Size: 224×224 • Color Space: RGB
+Split: 60% Train • 20% Val • 20% Test
 
-Color Space: RGB
-
-Formats: PNG / JPG
-
-Split Ratio:
-
-Train: 70%
-
-Validation: 15%
-
-Test: 15%
-
-Augmentation:
-
-Rotation
-
-Zoom
-
-Brightness
-
-Horizontal Flip
-
-🧠 Model Architecture
-INPUT IMAGE
+🧠 CNN Architecture
+Input (224×224×3)
 ↓
-Conv2D + ReLU
+Conv2D (32) + ReLU + BatchNorm
 ↓
 MaxPooling
 ↓
-Conv2D + ReLU
+Conv2D (64) + ReLU + BatchNorm
 ↓
 MaxPooling
 ↓
-Conv2D + ReLU
+Conv2D (128) + ReLU + BatchNorm
+↓
+MaxPooling
 ↓
 Flatten
 ↓
-Dense + Dropout
+Dense (256) + ReLU + Dropout(0.5)
 ↓
-Softmax Output (Logo Classes)
-
-Model Summary
-Component	Details
-Input Size	224×224×3
-Conv Layers	3
-Dense Layers	2
-Output	Multi-class Softmax
-Parameters	~2M
-Optimization	Adam
-Loss	Categorical Crossentropy
+Dense (128) + ReLU + Dropout(0.3)
+↓
+Softmax Output (8 Classes)
 📈 Performance Metrics
-Overall Accuracy
 Metric	Result
 Training Accuracy	95%
 Validation Accuracy	93%
-Test Accuracy	92%
+Testing Accuracy	92%
 Precision	92%
 Recall	93%
-F1-Score	0.92
-Observations
-
-✔ High accuracy on clean logo images
-
-✔ Slight confusion between similar color logos
-
-✔ Stable inference performance on mobile
-
+F1‑Score	0.92
+Inference Time	~250–400 ms
 📱 App Features
 
-📷 Real-time camera classification
+📷 Real‑time camera logo classification
 
 🖼️ Gallery image selection
 
@@ -216,94 +155,30 @@ Observations
 
 📈 Analytics dashboard
 
-🎨 Clean UI with modern layout
+💾 Local classification history
 
-☰ Navigation drawer (Burger Menu)
+☁️ Firebase Firestore integration
 
-🚧 Development Status
-
- Dataset preparation
-
- CNN model training
-
- Model evaluation
-
- Flutter UI integration
-
- Camera & gallery input
-
- Confidence visualization
-
- Transfer learning optimization
-
- Cloud-based inference
-
- App store deployment
-
-🔮 Future Improvements
-Short Term
-
- Add more logo classes
-
- Improve confidence calibration
-
- Enhance UI animations
-
-Medium Term
-
- Web dashboard for analytics
-
- Firebase image storage
-
- API-based inference
-
-Long Term
-
- Real-time video logo detection
-
- Explainable AI (Grad-CAM)
-
- Edge optimization for low-end devices
+🎨 Material Design 3 UI
 
 🎓 Educational Value
 
-This project demonstrates:
+Complete ML pipeline implementation
 
-✅ Practical mobile AI implementation
+CNN training and evaluation
 
-✅ CNN-based image classification
+Mobile AI deployment using TensorFlow Lite
 
-✅ Flutter + ML integration
+Flutter cross‑platform development
 
-✅ Dataset preparation and augmentation
-
-✅ Performance analysis and visualization
-
-✅ Real-world logo recognition problem
+Real‑world logo recognition use case
 
 👤 Author
 
 Cyrel O. Rellin
+BS Information Technology (BSIT)
+Caraga State University – Cabadbaran Campus
+Final Project • December 2025
 
-Program: BS Information Technology
-
-Institution: Caraga State University Cabadbaran Campus
-
-Project Type: Photo Editing Logo Classification (Final Project)
-
-Year: 2025
-
-⭐ Support
-
-If you find this project helpful:
-
-⭐ Star the repository
-
-🔀 Fork and improve
-
-💬 Share with classmates
-
-🤝 Contribute ideas
-
-Thank you for exploring the LogoScan project! 🎨📸
-Recognizing photo editing tools through AI, one logo at a time.
+Thank you for exploring the LogoScan project! 🎨✨
+Classifying photo editing logos with AI, one image at a time.
