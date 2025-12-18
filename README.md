@@ -51,7 +51,7 @@ An intelligent image classification system powered by **Deep Learning and Convol
 
 ## 📂 Project Structure
 
-'''
+```
 photo_editing_logo_classification/
 │
 ├── android/
@@ -104,7 +104,7 @@ photo_editing_logo_classification/
 ├── analysis_options.yaml
 ├── README.md
 └── .gitignore
-'''
+```
 
 ---
 
