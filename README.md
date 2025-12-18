@@ -1,4 +1,4 @@
-🎨 LogoScan – Photo Editing Logo Classification System
+#🎨 LogoScan – Photo Editing Logo Classification System
 
 An intelligent image classification system powered by Deep Learning and Convolutional Neural Networks (CNNs) that accurately identifies photo editing application logos from images. LogoScan is designed for educational, research, and real‑world mobile AI applications.
 
