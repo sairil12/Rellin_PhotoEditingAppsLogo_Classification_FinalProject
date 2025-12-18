@@ -1,0 +1,10 @@
+0 adobe photos
+1 canva
+2 fotor
+3 lightroom
+4 picsart
+5 pixlr
+6 polarr
+7 remini
+8 snapseed
+9 vsco
