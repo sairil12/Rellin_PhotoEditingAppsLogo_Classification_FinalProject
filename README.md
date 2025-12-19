@@ -119,7 +119,9 @@ photo_editing_logo_classification/
 | Snapseed | 250 |
 | VSCO | 250 |
 | Fotor | 250 |
-| Pixlr / Other | 250 |
+| Pixlr | 250 |
+| Polar | 250 |
+| Remini | 250 |
 | **Total** | **~2,500 images** |
 
 - **Image Size**: 224×224  
