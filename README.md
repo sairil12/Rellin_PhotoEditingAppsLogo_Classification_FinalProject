@@ -112,15 +112,15 @@ photo_editing_logo_classification/
 
 | Logo Class | Samples |
 |-----------|---------|
-| Adobe Photoshop | 150 |
-| Adobe Lightroom | 150 |
-| Canva | 150 |
-| PicsArt | 150 |
-| Snapseed | 150 |
-| VSCO | 150 |
-| Fotor | 150 |
-| Pixlr / Other | 150 |
-| **Total** | **~1,200 images** |
+| Adobe Photoshop | 250 |
+| Adobe Lightroom | 250 |
+| Canva | 250 |
+| PicsArt | 250 |
+| Snapseed | 250 |
+| VSCO | 250 |
+| Fotor | 250 |
+| Pixlr / Other | 250 |
+| **Total** | **~2,500 images** |
 
 - **Image Size**: 224×224  
 - **Color Space**: RGB  
